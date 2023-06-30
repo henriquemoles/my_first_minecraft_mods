@@ -11,13 +11,14 @@ import net.minecraft.world.phys.BlockHitResult;
 
 public class CustomBlock extends Block {
 
-
     public CustomBlock(Properties properties){
         super(properties);
 
     }
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+        player.setPos(player.getX(), player.getY() + 4, player.getZ());
         return super.use(state, level, pos, player, hand, result);
     }
+
 }
